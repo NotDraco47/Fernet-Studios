@@ -1,38 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <title>Fernet Studios</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
       height: 100vh;
-      background: #0d0d0d;
-      color: #aaa;
+      background: radial-gradient(circle at center, #111 0%, #000 70%);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      font-family: Arial, Helvetica, sans-serif;
+      justify-content: center;
+      font-family: "Segoe UI", sans-serif;
+      color: #aaa;
+      overflow: hidden;
     }
-    img {
-      max-width: 300px;
-      margin-bottom: 30px;
+
+    .container {
+      text-align: center;
+      animation: fadeIn 2s ease forwards;
     }
+
+    .logo {
+      max-width: 60vw;
+      max-height: 60vh;
+      animation: float 6s ease-in-out infinite;
+      filter: drop-shadow(0 0 30px rgba(255,255,255,0.15));
+    }
+
+    .name {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+      color: #ddd;
+      opacity: 0;
+      animation: fadeUp 1.5s ease forwards;
+      animation-delay: 1.2s;
+    }
+
     footer {
-      font-size: 12px;
-      opacity: 0.7;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #666;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 2s;
+    }
+
+    .dmca {
+      margin-top: 10px;
+      opacity: 0.85;
+    }
+
+    .dmca img {
+      height: 35px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
     }
   </style>
 </head>
-<body>
 
-  <img src="fernet studios logo.png" alt="Fernet Studios Logo">
+<body>
+  <div class="container">
+    <img src="fernet studios logo.png" alt="Fernet Studios Logo" class="logo" />
+    <div class="name">FERNET STUDIOS</div>
+  </div>
 
   <footer>
     © 2024–2026 Fernet Studios. All rights reserved.
+    <div class="dmca">
+      <a href="//www.dmca.com/Protection/Status.aspx?ID=9ea53de4-cbdb-4cfb-88e9-61672c8175a5"
+         title="DMCA.com Protection Status"
+         class="dmca-badge">
+        <img src="https://images.dmca.com/Badges/dmca_protected_21_120.png?ID=9ea53de4-cbdb-4cfb-88e9-61672c8175a5"
+             alt="DMCA.com Protection Status" />
+      </a>
+    </div>
   </footer>
 
+  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
 </body>
 </html>
